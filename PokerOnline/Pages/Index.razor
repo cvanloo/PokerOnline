@@ -8,7 +8,7 @@
     </div>
 }
 else {
-<div class="centered">
+@*<div class="centered">*@
     <div class="@(_player == _table.CurrPlayer ? "vertical content active" : "vertical content")">
         <UserComponent PlayerModel="_player"/>
     </div>
@@ -23,7 +23,7 @@ else {
             <TableComponent TableModel="_table" />
         </div>
     </div>
-</div>
+@*</div>*@
 
     @*<button @onclick="@UpdateTmp">Update</button>*@
 }
