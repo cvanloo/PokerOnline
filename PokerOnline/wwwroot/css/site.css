@@ -51,13 +51,13 @@ div {
     }
 
 input {
-    border: 1px solid #FFFFFF;
+    border: 2px solid #45475b;
     border-radius: 15px;
     height: 30px;
 }
 
     input:active, input:focus {
-        border: 1px solid #00FFC2;
+        border: 2px solid #00FFC2;
         height: 30px;
     }
 
@@ -65,7 +65,7 @@ button {
     border: 3px solid #45475b;
     border-radius: 15px;
     font-weight: bold;
-    height: 30px;
+    /*height: 30px;*/
 	min-height: 40px;
 }
 

@@ -7,10 +7,11 @@
 <CardHandComponent CardHandModel="PlayerModel.Hand" />
 
 <div class="vertical">
-@*<div class="@(Active ? "vertical active" : "vertical")">*@
     <button id="ub" @onclick="PlayerModel.Call">Call</button>
-    <button id="ub" @onclick="Raise">Raise</button>
-    <input type="text" placeholder="Value" @bind="@_raiseValue" style="width: 100%"/>
+	<div class="vertical_flex" style="padding: 0px;">
+		<input id="ub" type="text" placeholder="Value" @bind="@_raiseValue" style="width: 100%"/>
+    	<button id="ub" @onclick="Raise">Raise</button>
+	</div>
     <button id="ub" @onclick="PlayerModel.Check">Check</button>
     <button id="ub" @onclick="PlayerModel.Fold" class="accentBGRed">Fold</button>
 </div>
