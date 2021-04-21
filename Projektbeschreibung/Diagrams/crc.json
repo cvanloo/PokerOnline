@@ -1,0 +1,109 @@
+[
+  {
+    "name": "LocalGameHandler",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "StartGame",
+      "MakeMove"
+    ],
+    "collaborators": [
+      "Player",
+      "Cards"
+    ]
+  },
+  {
+    "name": "ConnectionHandler",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Listen",
+      "Connect"
+    ],
+    "collaborators": [
+      "Client",
+      "ClientInterface"
+    ]
+  },
+  {
+    "name": "ClientInterface",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Login",
+      "Signup",
+      "JoinPublicGame",
+      "CreatePrivateGame"
+    ],
+    "collaborators": [
+      "AuthHandler",
+      "MatchHandler",
+      "GameRoom"
+    ]
+  },
+  {
+    "name": "AuthHandler",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "CreateAccount",
+      "Authenticate"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "MatchMaker",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "FindMatch"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "GameRoom",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "GameHandler",
+      "Player"
+    ]
+  },
+  {
+    "name": "Player",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "LocalGameHandler",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      ""
+    ]
+  }
+]
