@@ -40,6 +40,8 @@ else {
 
             _player.JoinTable(_table);
 
+			_table.TableStateChanged += (o,e) => InvokeAsync(() => StateHasChanged());
+
             if (_table.Players.Count == 3)
                 _table.StartGame();
         }

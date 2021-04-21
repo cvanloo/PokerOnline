@@ -9,6 +9,8 @@ namespace PokerOnline.Models
     {
         private static Table singletonRef; // TMP, TODO: Later a "Match-Maker" should create (multiple) tables 
                                            // and add player from a queue together into games
+		public EventHandler TableStateChanged;
+
         private Deck deck;
 
         public TableState State { get; private set; }
@@ -69,6 +71,7 @@ namespace PokerOnline.Models
             CurrPlayer = null;
             CurrBetValue = 0;
             TableCards = new List<Card>();
+			TableStateChanged?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -102,6 +105,9 @@ namespace PokerOnline.Models
                     p.AddCard(deck.Deal()[0]);
                 }
             }
+
+
+			TableStateChanged?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -142,6 +148,8 @@ namespace PokerOnline.Models
 
                 // Change the current player
                 SetNextPlayer();
+
+				TableStateChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -154,7 +162,9 @@ namespace PokerOnline.Models
         {
             Players.Add(player);
 
-            return this;
+			TableStateChanged?.Invoke(this, EventArgs.Empty);
+            
+			return this;
         }
 
         /// <summary>
@@ -165,7 +175,7 @@ namespace PokerOnline.Models
             List<Player> activePlayers = GetActivePlayers;
             int newIndex = activePlayers.IndexOf(CurrPlayer) + 1;
 
-            if (newIndex >= Players.Count)
+            if (newIndex >= activePlayers.Count)
                 newIndex = 0;
 
             CurrPlayer = activePlayers[newIndex];
