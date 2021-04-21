@@ -1,7 +1,7 @@
 ﻿@using PokerOnline.Models
 
 <div class="table content">
-    <p>Highest Bet: @TableModel.CurrBetValue / Pot: @TableModel.Pot / State: @TableModel.State</p>
+    <p>Highest Bet: @TableModel.CurrBetValue / Pot: @TableModel.Pot / State: @TableModel.State / Current Player: @(TableModel.CurrPlayer != null ? TableModel.CurrPlayer.Username : "")</p>
 
     @foreach (var card in TableModel.TableCards) {
         <CardComponent CardModel="card" />

@@ -14,7 +14,7 @@ else {
     <div class="vertical">
         <div>
             @foreach (var player in _table.Players) {
-                <PlayerComponent PlayerModel="player" />
+                <PlayerComponent PlayerModel="player" Active="@(player == _table.CurrPlayer)" />
             }
         </div>
         <div>
@@ -23,13 +23,14 @@ else {
     </div>
 
 
-    <button @onclick="@UpdateTmp">Update</button>
+    @*<button @onclick="@UpdateTmp">Update</button>*@
 }
 
 @code {
     private Table _table;
     private string _username;
     private Player _player;
+	private bool _active = false;
 
     private void Connect()
     {
@@ -47,10 +48,10 @@ else {
         }
     }
 
-    private void UpdateTmp()
+    @*private void UpdateTmp()
     {
         StateHasChanged();
-    }
+    }*@
 }
 
 

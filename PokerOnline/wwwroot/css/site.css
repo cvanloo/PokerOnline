@@ -2,7 +2,7 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #0F111B;
     color: lightyellow;
     overflow: hidden; /* Hide scrollbars */
 }
@@ -35,7 +35,7 @@ div {
 }
 
     div.content {
-        background-color: #0F111B;
+        background-color: #45475b; /* 35363f */
     }
 
     div.simple_border {

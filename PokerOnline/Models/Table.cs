@@ -247,6 +247,8 @@ namespace PokerOnline.Models
                 }
             }
 
+			TableCards.Clear();
+
             return winner;
         }
     }

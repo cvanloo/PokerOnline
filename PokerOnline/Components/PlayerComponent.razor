@@ -1,6 +1,7 @@
 ﻿@using PokerOnline.Models
 
-<div class="player vertical content">
+@*<div class="player vertical content">*@
+<div class="@(Active ? "player vertical content active" : "player vertical content")">
     <h4>@PlayerModel.Username</h4>
     <p>Bet: @PlayerModel.Bet</p>
     <p>State: @PlayerModel.State</p>
@@ -14,4 +15,5 @@
 
 @code {
     [Parameter] public Player PlayerModel { get; set; }
+	[Parameter] public bool Active { get; set; } = false;
 }
