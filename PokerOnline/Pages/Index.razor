@@ -8,12 +8,13 @@
     </div>
 }
 else {
-    <div class="vertical content">
-        <UserComponent PlayerModel="_player" />
+    <div class="@(_player == _table.CurrPlayer ? "vertical content active" : "vertical content")">
+        <UserComponent PlayerModel="_player"/>
     </div>
     <div class="vertical">
         <div>
             @foreach (var player in _table.Players) {
+				if (_player == player) continue;
                 <PlayerComponent PlayerModel="player" Active="@(player == _table.CurrPlayer)" />
             }
         </div>

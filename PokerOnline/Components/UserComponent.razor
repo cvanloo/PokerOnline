@@ -7,6 +7,7 @@
 <CardHandComponent CardHandModel="PlayerModel.Hand" />
 
 <div class="vertical">
+@*<div class="@(Active ? "vertical active" : "vertical")">*@
     <button @onclick="PlayerModel.Call">Call</button>
     <button @onclick="Raise">Raise</button>
     <input type="text" placeholder="Value" @bind="@_raiseValue" style="width: 100%"/>
