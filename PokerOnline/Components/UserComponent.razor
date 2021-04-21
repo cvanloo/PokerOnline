@@ -8,15 +8,15 @@
 
 <div class="vertical">
 @*<div class="@(Active ? "vertical active" : "vertical")">*@
-    <button @onclick="PlayerModel.Call">Call</button>
-    <button @onclick="Raise">Raise</button>
+    <button id="ub" @onclick="PlayerModel.Call">Call</button>
+    <button id="ub" @onclick="Raise">Raise</button>
     <input type="text" placeholder="Value" @bind="@_raiseValue" style="width: 100%"/>
-    <button @onclick="PlayerModel.Check">Check</button>
-    <button @onclick="PlayerModel.Fold" class="accentBGRed">Fold</button>
+    <button id="ub" @onclick="PlayerModel.Check">Check</button>
+    <button id="ub" @onclick="PlayerModel.Fold" class="accentBGRed">Fold</button>
 </div>
 
 <style>
-    button {
+    #ub {
         margin: 5px;
     }
 </style>

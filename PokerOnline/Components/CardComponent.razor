@@ -1,14 +1,8 @@
 ﻿@using PokerOnline.Models
 
-<div class="card simple_border">
+<div class="card simple_border" style="margin: 5px;">
     <p>@CardModel.GetSuit, @CardModel.GetValue</p>
 </div>
-
-<style>
-   div {
-       margin: 5px;
-   }
-</style>
 
 @code {
     [Parameter] public Card CardModel { get; set; }

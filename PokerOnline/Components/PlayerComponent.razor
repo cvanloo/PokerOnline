@@ -1,15 +1,16 @@
 ﻿@using PokerOnline.Models
 
 @*<div class="player vertical content">*@
-<div class="@(Active ? "player vertical content active" : "player vertical content")">
+<div id="pd" class="@(Active ? "player vertical content active" : "player vertical content")">
     <h4>@PlayerModel.Username</h4>
     <p>Bet: @PlayerModel.Bet</p>
     <p>State: @PlayerModel.State</p>
 </div>
 
 <style>
-    div {
+    #pd {
         padding: 5px;
+		min-width: 200px;
     }
 </style>
 
