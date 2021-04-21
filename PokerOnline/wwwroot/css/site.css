@@ -78,6 +78,10 @@ div.vertical {
     display: inline-block;
 }
 
+div.vertical_flex {
+	display: flex;
+}
+
 div.vertical button {
     width: 100%;
 }

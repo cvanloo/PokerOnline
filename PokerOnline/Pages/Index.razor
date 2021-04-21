@@ -8,12 +8,12 @@
     </div>
 }
 else {
-@*<div class="centered">*@
-    <div class="@(_player == _table.CurrPlayer ? "vertical content active" : "vertical content")">
+<div class="vertical_flex">
+    <div class="@(_player == _table.CurrPlayer ? "content active" : "vertical content")">
         <UserComponent PlayerModel="_player"/>
     </div>
-    <div class="vertical">
-        <div>
+    <div style="padding-top: 0px;">
+        <div style="padding-top: 0px;">
             @foreach (var player in _table.Players) {
 				if (_player == player) continue;
                 <PlayerComponent PlayerModel="player" Active="@(player == _table.CurrPlayer)" />
@@ -23,7 +23,7 @@ else {
             <TableComponent TableModel="_table" />
         </div>
     </div>
-@*</div>*@
+</div>
 
     @*<button @onclick="@UpdateTmp">Update</button>*@
 }
