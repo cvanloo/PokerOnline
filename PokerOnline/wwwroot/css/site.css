@@ -82,6 +82,16 @@ div.vertical button {
     width: 100%;
 }
 
+div.centered {
+	/*background-color: #FFF;*/
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px, solid, #ffffff;
+    padding: 10px;
+}
+
 /*app {
     position: relative;
     display: flex;

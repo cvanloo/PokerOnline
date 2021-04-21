@@ -9,5 +9,11 @@ namespace PokerOnline.Data
     {
         public string Username { get; set; }
         public byte[] PwHash { get; set; }
+
+		public User(string username, byte[] pwHash)
+		{
+			Username = username;
+			PwHash = pwHash;
+		}
     }
 }

@@ -1,0 +1,26 @@
+@page "/login"
+@using PokerOnline.Data
+@using System.Text
+
+<div class="centered content active account_form" style="height: 200px;">
+	<h5 class="accentFGCyan">Create Account</h5>
+	<input type="text" placeholder="Username" style="width: 100%;" @bind="_username" />
+	<input type="password" placeholder="Password" style="position: relative; top: 30px; width: 100%;" @bind="_passwd" />
+	<button @onclick="@Register" style="position: relative; top: 60px; width: 100%;">Register</button>
+</div>
+
+@code {
+	private string _username;
+	private string _passwd;
+
+	public void Register() 
+	{ 
+		if (!String.IsNullOrEmpty(_username) && !String.IsNullOrEmpty(_passwd))
+		{
+			byte[] hashPw = Encoding.ASCII.GetBytes(_passwd); // TODO: Create salted sha512 hash of string
+			User newUser = new User(_username, hashPw);
+
+			AuthHandler.CreateAccountAsync(newUser);
+		}
+	}
+}
