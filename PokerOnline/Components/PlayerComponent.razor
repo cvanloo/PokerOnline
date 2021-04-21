@@ -1,0 +1,17 @@
+﻿@using PokerOnline.Models
+
+<div class="player vertical content">
+    <h4>@PlayerModel.Username</h4>
+    <p>Bet: @PlayerModel.Bet</p>
+    <p>State: @PlayerModel.State</p>
+</div>
+
+<style>
+    div {
+        padding: 5px;
+    }
+</style>
+
+@code {
+    [Parameter] public Player PlayerModel { get; set; }
+}

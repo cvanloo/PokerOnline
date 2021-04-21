@@ -1,0 +1,11 @@
+﻿@using PokerOnline.Models
+
+<div class="card">
+    @foreach (var card in CardHandModel.Cards) {
+        <CardComponent CardModel="card" />
+    }
+</div>
+
+@code {
+    [Parameter] public CardHand CardHandModel { get; set; }
+}

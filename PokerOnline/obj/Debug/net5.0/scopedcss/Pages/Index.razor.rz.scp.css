@@ -1,0 +1,14 @@
+
+/* Displays an element in the center of the webpage */
+.centered[b-t7zeom9z6o] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px, solid, #ffffff;
+    padding: 10px;
+}
+
+.login[b-t7zeom9z6o] {
+    padding: 0px 50px 50px 50px;
+}

@@ -1,0 +1,54 @@
+﻿@page "/"
+
+@if (null == _table) {
+    <div class="centered login content active">
+        <h5 class="accentFGCyan">Login</h5>
+        <input type="text" placeholder="Username" @bind="@_username" style="width: 100%" />
+        <button @onclick="@Connect" style="position: relative; top: 30px; width: 100%">Connect</button>
+    </div>
+}
+else {
+    <div class="vertical content">
+        <UserComponent PlayerModel="_player" />
+    </div>
+    <div class="vertical">
+        <div>
+            @foreach (var player in _table.Players) {
+                <PlayerComponent PlayerModel="player" />
+            }
+        </div>
+        <div>
+            <TableComponent TableModel="_table" />
+        </div>
+    </div>
+
+
+    <button @onclick="@UpdateTmp">Update</button>
+}
+
+@code {
+    private Table _table;
+    private string _username;
+    private Player _player;
+
+    private void Connect()
+    {
+        if (String.Empty != _username)
+        {
+            _player = new Player(_username, 500);
+            _table = Table.GetReference();
+
+            _player.JoinTable(_table);
+
+            if (_table.Players.Count == 3)
+                _table.StartGame();
+        }
+    }
+
+    private void UpdateTmp()
+    {
+        StateHasChanged();
+    }
+}
+
+

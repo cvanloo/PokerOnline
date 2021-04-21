@@ -1,0 +1,13 @@
+﻿@using PokerOnline.Models
+
+<div class="table content">
+    <p>Highest Bet: @TableModel.CurrBetValue / Pot: @TableModel.Pot / State: @TableModel.State</p>
+
+    @foreach (var card in TableModel.TableCards) {
+        <CardComponent CardModel="card" />
+    }
+</div>
+
+@code {
+    [Parameter] public Table TableModel { get; set; }
+}

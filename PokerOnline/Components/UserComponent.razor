@@ -1,0 +1,41 @@
+﻿<h4 class="accentFGCyan">You: @PlayerModel.Username</h4>
+
+<p>Bet: @PlayerModel.Bet</p>
+<p>Chips: @PlayerModel.GetChips</p>
+<p>State: @PlayerModel.State</p>
+
+<CardHandComponent CardHandModel="PlayerModel.Hand" />
+
+<div class="vertical">
+    <button @onclick="PlayerModel.Call">Call</button>
+    <button @onclick="Raise">Raise</button>
+    <input type="text" placeholder="Value" @bind="@_raiseValue" style="width: 100%"/>
+    <button @onclick="PlayerModel.Check">Check</button>
+    <button @onclick="PlayerModel.Fold" class="accentBGRed">Fold</button>
+</div>
+
+<style>
+    button {
+        margin: 5px;
+    }
+</style>
+
+@code {
+    [Parameter] public Player PlayerModel { get; set; }
+
+    private string _raiseValue;
+
+    private void Raise()
+    {
+        if (String.Empty != _raiseValue)
+        {
+            int raise;
+            bool success = int.TryParse(_raiseValue, out raise);
+
+            if (success)
+            {
+                PlayerModel.Raise(raise);
+            }
+        }
+    }
+}
