@@ -29,7 +29,7 @@
 
     private void Raise()
     {
-        if (String.Empty != _raiseValue)
+        if (!String.IsNullOrEmpty(_raiseValue))
         {
             int raise;
             bool success = int.TryParse(_raiseValue, out raise);
