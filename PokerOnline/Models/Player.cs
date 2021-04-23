@@ -22,6 +22,16 @@ namespace PokerOnline.Models
             get { return chips; }
         }
 
+		public bool IsMyTurn 
+		{
+			get
+			{
+				if (null == table) return false;
+
+				return this == table.CurrPlayer;
+			}
+		}
+
         /// <summary>
         /// State of the player
         /// </summary>
@@ -80,6 +90,8 @@ namespace PokerOnline.Models
         /// </summary>
         public void Fold()
         {
+			if (!IsMyTurn) return;
+
             Hand.Cards.Clear();
             State = PlayerState.Retired;
 
@@ -95,6 +107,8 @@ namespace PokerOnline.Models
         /// </summary>
         public void Call()
         {
+			if (!IsMyTurn) return;
+
             int difference = table.CurrBetValue - Bet;
 
             if (difference > chips)
@@ -112,6 +126,8 @@ namespace PokerOnline.Models
         /// <param name="raise">New bet value. Has to be at least double the old bet.</param>
         public void Raise(int raise)
         {
+			if (!IsMyTurn) return;
+
             if (raise >= (2 * table.CurrBetValue) && (raise - table.CurrBetValue) <= chips)
             {
                 table.CurrBetValue = raise;
@@ -124,6 +140,8 @@ namespace PokerOnline.Models
         /// </summary>
         public void Check()
         {
+			if (!IsMyTurn) return;
+
             if (Bet == table.CurrBetValue)
             {
                 table.UpdateState();

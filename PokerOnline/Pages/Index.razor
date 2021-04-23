@@ -9,11 +9,11 @@
 }
 else {
 <div class="vertical_flex centered">
-    <div class="@(_player == _table.CurrPlayer ? "content active" : "vertical content")">
+    <div class="@(_player == _table.CurrPlayer ? "vertical content active" : "vertical content")">
         <UserComponent PlayerModel="_player"/>
     </div>
     <div style="padding-top: 0px;">
-        <div style="padding-top: 0px;">
+        <div style="padding-top: 0px; min-height: 90px;">
             @foreach (var player in _table.Players) {
 				if (_player == player) continue;
                 <PlayerComponent PlayerModel="player" Active="@(player == _table.CurrPlayer)" />
